@@ -1,0 +1,11 @@
+<mat-icon (click)="goBack()" class="back-button">arrow_back</mat-icon>
+<div fxLayout="column">
+  <div fxLayout="row" fxLayoutAlign="center start">
+    <nk-song-player
+      (currentTime)="currentTime($event)"
+    ></nk-song-player>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center start">
+    <nk-lyrics-renderer></nk-lyrics-renderer>
+  </div>
+</div>

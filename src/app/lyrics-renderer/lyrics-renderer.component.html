@@ -1,0 +1,50 @@
+<div fxLayout="row" fxLayoutAlign="end center" class="container-card">
+  Lyrics Offset &nbsp;
+  <button mat-raised-button (click)="minus()" class="btn btn-default">
+    <mat-icon>remove</mat-icon>
+  </button>
+  <input class="offset-input" [(ngModel)]="offset" (change)="change()" />
+  <button mat-raised-button class="btn btn-default" (click)="plus()">
+    <mat-icon>add</mat-icon>
+  </button>
+  &nbsp;&nbsp;
+  <button
+    (click)="openFullscreen()"
+    title="Go Fullscreen"
+    mat-raised-button
+    class="btn btn-default"
+  >
+    <mat-icon>fullscreen</mat-icon>
+  </button>
+</div>
+<div fxLayout="row" fxLayoutAlign="center center" class="container-card">
+  <div #fullScreen fxLayout="column" fxLayoutAlign="center center">
+    <div class="lyrics3" fxLayout="row" fxLayoutAlign="center center">
+      {{ lyricsArr[currentLine - 4]?.lyric }}
+    </div>
+    <div class="lyrics3" fxLayout="row" fxLayoutAlign="center center">
+      {{ lyricsArr[currentLine - 3]?.lyric }}
+    </div>
+    <div class="lyrics2" fxLayout="row" fxLayoutAlign="center center">
+      {{ lyricsArr[currentLine - 2]?.lyric }}
+    </div>
+    <div class="lyrics1" fxLayout="row" fxLayoutAlign="center center">
+      {{ lyricsArr[currentLine - 1]?.lyric }}
+    </div>
+    <div class="lyrics" fxLayout="row" fxLayoutAlign="center center">
+      {{ lyricsArr[currentLine]?.lyric }}
+    </div>
+    <div class="lyrics1" fxLayout="row" fxLayoutAlign="center center">
+      {{ lyricsArr[currentLine + 1]?.lyric }}
+    </div>
+    <div class="lyrics2" fxLayout="row" fxLayoutAlign="center center">
+      {{ lyricsArr[currentLine + 2]?.lyric }}
+    </div>
+    <div class="lyrics3" fxLayout="row" fxLayoutAlign="center center">
+      {{ lyricsArr[currentLine + 3]?.lyric }}
+    </div>
+    <div class="lyrics3" fxLayout="row" fxLayoutAlign="center center">
+      {{ lyricsArr[currentLine + 4]?.lyric }}
+    </div>
+  </div>
+</div>

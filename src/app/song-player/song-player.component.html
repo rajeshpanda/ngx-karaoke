@@ -1,0 +1,29 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="container-card">
+  <div fxLayout="column" fxFlex="30%" fxLayoutAlign="center center">
+    <div class="thumbnail">
+        <img style="width: 120px; height:120px;" [src]="getThumbnail()"/>
+    </div>
+  </div>
+  <div fxLayout="column" fxFlex="70%" fxLayoutGap="0px">
+    <div fxLayout="row" fxFlex>
+      <h4>{{title | titlecase}}</h4>
+    </div>
+    <div fxLayout="row" fxLayoutGap="3px">
+      <button class="btn" [disabled]="isPlaying" (click)="play()">
+        <mat-icon>play_arrow</mat-icon>
+      </button>
+      <button class="btn" [disabled]="!isPlaying" (click)="pause()">
+        <mat-icon>pause</mat-icon>
+      </button>
+      <button class="btn" [disabled]="isPlaying" (click)="stop()">
+        <mat-icon>stop</mat-icon>
+      </button>
+      <div fxLayout="column" fxFlex>
+        <h5 fxLayout="row" fxLayoutAlign="end start">
+          {{ convertHMS(currentTimeInt) }} /
+          {{ convertHMS(durationInt) }}
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,104 @@
+<mat-icon (click)="location.back()" class="back-button">arrow_back</mat-icon>
+<div fxLayout="column">
+  <div fxLayout="row" fxLayoutAlign="center start">
+    <form [formGroup]="karaokeForm">
+      <div fxLayout="row" fxLayoutAlign="center center" class="container-card">
+        <div fxLayout="column" fxLayoutAlign="center center">
+          <div
+            fxLayout="row"
+            fxLayoutAlign="center center"
+            class="container-card-no-border"
+          >
+            <div fxLayout="column" fxFlex="30%" fxLayoutAlign="center center">
+              <div class="thumbnail container">
+                <img
+                  style="width: 120px; height: 120px;"
+                  [src]="getThumbnail()"
+                />
+                <div class="overlay" (click)="thumbnailUpload()">
+                  <div *ngIf="picUrl" class="upload-text">Change Picture</div>
+                  <div *ngIf="!picUrl" class="upload-text">Select Picture</div>
+                </div>
+                <input
+                  style="display: none;"
+                  type="file"
+                  (change)="onThumbnailChanged($event)"
+                  #thumbnailInput
+                />
+              </div>
+            </div>
+            <div fxLayout="column" fxFlex="70%">
+              <mat-form-field appearance="outline">
+                <mat-label>Song Title</mat-label>
+                <input
+                  matInput
+                  placeholder="Enter song title"
+                  formControlName="songName"
+                  [(ngModel)]="songTitle"
+                />
+                <mat-error
+                  *ngIf="f.songName.errors && f.songName.errors.required"
+                >
+                  Please enter song title
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Artist's Name</mat-label>
+                <input
+                  matInput
+                  placeholder="Enter artist's name"
+                  formControlName="artistName"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="center start">
+            <button type="button" mat-raised-button (click)="songUpload()">
+              Upload Song
+            </button>
+            <p *ngIf="songUrl">
+              <mat-icon style="color: green; font-size: 20px;"
+                >check_circle</mat-icon
+              >
+            </p>
+          </div>
+          <p style="text-align: center;">
+            <mat-error *ngIf="isSubmitted && !songUrl">
+              Please upload a song
+            </mat-error>
+          </p>
+          <input
+            style="display: none;"
+            type="file"
+            (change)="onSongChanged($event)"
+            #songInput
+          />
+
+          <div fxFlexFill fxLayout="row" fxLayoutAlign="center start">
+            <mat-form-field fxFlex="95%" appearance="outline">
+              <mat-label>Song Lyrics</mat-label>
+              <textarea
+                matInput
+                rows="30"
+                formControlName="lyricsText"
+              ></textarea>
+              <mat-error
+                *ngIf="f.lyricsText.errors && f.lyricsText.errors.required"
+              >
+                Please enter lyrics
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="center start" fxLayoutGap="20px">
+            <button type="button" mat-raised-button (click)="openLRCSource()">
+              Find Lyrics on Syair
+            </button>
+            <button type="submit" mat-raised-button (click)="create()">
+              Save Karaoke
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

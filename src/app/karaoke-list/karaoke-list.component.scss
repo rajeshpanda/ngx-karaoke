@@ -1,0 +1,55 @@
+.song-card {
+  max-width: 120px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+mat-card-header {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+::ng-deep .mat-card-header-text {
+    margin: 0px !important;
+}
+
+.overlay-container {
+  position: relative;
+  width: 100%;
+  max-width: 120px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  transition: 0.3s ease;
+}
+
+// .overlay-container:hover .overlay {
+//   opacity: 1;
+// }
+
+.icon {
+  color: white;
+  font-size: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.play-icon {
+    font-size: 100px;
+    height: 100px;
+    width: 100px;
+    color: gold;;
+    opacity: 0.5;
+}
