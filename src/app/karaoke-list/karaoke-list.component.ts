@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Karaoke } from '../model/karaoke.model';
+import { Karaoke } from '../lyrics-renderer/model/karaoke.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';

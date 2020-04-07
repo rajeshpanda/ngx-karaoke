@@ -1,0 +1,15 @@
+@keyframes blink {  
+    0% { color: gold; }
+    100% { color: transparent; }
+  }
+  @-webkit-keyframes blink {
+    0% { color: gold; }
+    100% { color: transparent; }
+  }
+  .blink {
+    -webkit-animation: blink 1s linear infinite;
+    -moz-animation: blink 1s linear infinite;
+    animation: blink 1s linear infinite;
+    padding-top: 5px;
+    font-size:15px;
+  } 

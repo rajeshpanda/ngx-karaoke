@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Karaoke } from '../model/karaoke.model';
+import { Karaoke } from '../lyrics-renderer/model/karaoke.model';
 import { Observable } from 'rxjs';
 import { Location } from '@angular/common';
 import { CommonService } from '../shared/common.service';

@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <RootNamespace>karoke_api_dotnetcore</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="iis-deploy\**" />
+    <Content Remove="iis-deploy\**" />
+    <EmbeddedResource Remove="iis-deploy\**" />
+    <None Remove="iis-deploy\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.2.4" />
+    <PackageReference Include="NSwag.AspNetCore" Version="13.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="files\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="files\71496d95-f4d2-4aa4-a366-5bb0c2166e88.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\baec43d4-adf2-4a7b-8294-9a37aab6eed8.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

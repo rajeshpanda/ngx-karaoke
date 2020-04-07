@@ -1,27 +1,22 @@
 # NgxKaraoke
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
+## Techstack:
+- Angular
+- .Net Core 2.2
+- Postgres 12
+- Web Speech API
 
-## Development server
+## To get started
+- Setup backend api, build the dotnet app and migrate a single model db onto your postgres instance. You can find the solution in `server/`.
+- Once the app is started, get the api_url(something like https://localhost:port/api) and replace the string in `src/environments/environment.ts`.
+- Start the angular app using `ng serve`. Ideally, the app would start on http://localhost:4200.
+- To add songs, add mp3 files and .lrc format for lyrics. Set th offset value correctly and there you go, all set!!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Hosting Tips
+- I have hosted the entire stack on IIS 10. This way I do not have to run my projects when using this.
+- You can use any db as long as dotnet ef supports it. Just need to make minor changes in `server/Startup.cs` for db connections.
 
-## Code scaffolding
+PS: I have tested this on Chrome Version 80.0.3987.163 (Official Build) (64-bit). Not sure how it works on other browsers. Let me know on the issue board.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![Alt text](readme/homepage.JPG "Title")
+![Alt text](readme/player.JPG "Title")

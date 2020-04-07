@@ -1,21 +1,25 @@
-<div fxLayout="row" fxLayoutAlign="end center" class="container-card">
-  Lyrics Offset &nbsp;
-  <button mat-raised-button (click)="minus()" class="btn btn-default">
-    <mat-icon>remove</mat-icon>
-  </button>
-  <input class="offset-input" [(ngModel)]="offset" (change)="change()" />
-  <button mat-raised-button class="btn btn-default" (click)="plus()">
-    <mat-icon>add</mat-icon>
-  </button>
-  &nbsp;&nbsp;
-  <button
-    (click)="openFullscreen()"
-    title="Go Fullscreen"
-    mat-raised-button
-    class="btn btn-default"
-  >
-    <mat-icon>fullscreen</mat-icon>
-  </button>
+<div fxLayout="row" fxLayoutAlign="start center" class="container-card">
+  <div fxFlex="40%">Match Meter ~{{ score | percent }} <mat-icon class="blink">{{getEmoji()}}</mat-icon></div>
+  <div fxFlex="50%">
+    Lyrics Offset &nbsp;
+    <button mat-raised-button (click)="minus()" class="btn btn-default">
+      <mat-icon>remove</mat-icon>
+    </button>
+    <input class="offset-input" [(ngModel)]="offset" (change)="change()" />
+    <button mat-raised-button class="btn btn-default" (click)="plus()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <div fxFlex="10%">
+    <button
+      (click)="openFullscreen()"
+      title="Go Fullscreen"
+      mat-raised-button
+      class="btn btn-default"
+    >
+      <mat-icon>fullscreen</mat-icon>
+    </button>
+  </div>
 </div>
 <div fxLayout="row" fxLayoutAlign="center center" class="container-card">
   <div #fullScreen fxLayout="column" fxLayoutAlign="center center">

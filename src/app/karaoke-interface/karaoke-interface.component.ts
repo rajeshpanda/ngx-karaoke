@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { LyricsRendererComponent } from '../lyrics-renderer/lyrics-renderer.component';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { Karaoke } from '../model/karaoke.model';
+import { Karaoke } from '../lyrics-renderer/model/karaoke.model';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
@@ -29,7 +29,6 @@ export class KaraokeComponent implements OnInit {
       if (params.id) {
         this.getKaraoke(params.id).subscribe((res) => {
           this.karaoke = res;
-          console.log(this.karaoke);
           this.player.songPath = this.karaoke.songLink;
           this.player.title = this.karaoke.songName;
           this.player.thumbnail = this.karaoke.thumbnailLink;
